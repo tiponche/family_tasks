@@ -1,0 +1,26 @@
+<p>
+  <h1>Family Member Dashboard</h1>
+</p>
+
+<p>
+  <div><%= link_to 'Add Family Member', new_member_path %></div>
+  <br>
+  <div>
+    <table class="table table-striped">
+      <tbody>
+        <% if @members.any? %>
+          <%= render @members %>
+          <tr>
+            <td colspan=3><%= link_to '(View All Tasks)', tasks_path %></td>
+          </tr>
+        <% else %>
+          <tr>No member found!</tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <% if @members.any? %>
+      <div><%= link_to 'Delete All Tasks', destroy_all_tasks_path, class: 'text-danger', data: { 'turbo-confirm': 'Delete all tasks!', 'turbo-method': :delete } %></div>
+    <% end %>
+  </div>
+</p>

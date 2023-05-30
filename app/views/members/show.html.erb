@@ -1,0 +1,32 @@
+<p>
+  <h1>Tasks assigned to <%= @member.name %></h1>
+</p>
+
+<p>
+  <div><%= link_to 'Add Task', new_member_task_path(@member) %></div>
+  <br>
+  <table class="table table-striped">
+    <tbody>
+      <% if @tasks.any? %>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <%= render partial: 'task', collection: @tasks %>
+      <% else %>
+        <tr>No task found!</tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<p>
+  <% if @tasks.any? %>
+    <%= will_paginate @tasks, :container => false %>
+    <br>
+    <%= page_entries_info @tasks %>
+  <% end %>
+</p>

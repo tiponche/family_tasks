@@ -1,0 +1,28 @@
+<p>
+  <h1>Add task</h1>
+</p>
+
+<p>
+  <%= form_for @task, html: {:class => 'form-horizontal center'} do |f| %>
+    <div class="form-group">
+      <%= f.label :name, 'Name:', class: 'col-md-4 control-label' %>
+      <div class="col-md-8">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <%= f.label :member, 'Family Member:', class: 'col-md-4 control-label' %>
+      <div class="col-md-8">
+        <%= f.collection_select :member_id, Member.order(:name), :id, :name, { class: 'form-control' }, { style: 'width: inherit;' } %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <%= f.submit 'Save', class: 'btn btn-success' %>
+  <% end %>
+</p>

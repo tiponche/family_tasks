@@ -1,0 +1,15 @@
+<tr>
+  <% if task.present? %>
+    <td><%= task.name %></td>
+    <td>
+      <% if task.is_completed? %>
+        <span class="badge text-bg-success"><%= task.status %></span>
+      <% else %>
+        <span class="badge text-bg-danger"><%= task.status %></span>
+      <% end %>
+    </td>
+    <td><%= link_to 'Mark as complete', member_task_path(@member, task), data: { turbo_method: :put } unless task.is_completed? %></td>
+  <% else %>
+    <td>No task found!</td>
+  <% end %>
+</tr>

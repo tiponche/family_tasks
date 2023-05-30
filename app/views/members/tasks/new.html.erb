@@ -1,0 +1,17 @@
+<p>
+  <h1>Add Task for <%= @member.name %></h1>
+</p>
+
+<p>
+  <%= form_for @task, url: member_tasks_path(@member), :html => {:class => 'form-horizontal center'} do |f| %>
+    <div class="form-group">
+      <%= f.label :name, 'Name:', class: 'col-md-4 control-label' %>
+      <div class="col-md-8">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <br>
+    <br>
+    <%= f.submit 'Save', class: 'btn btn-success' %>
+  <% end %>
+</p>

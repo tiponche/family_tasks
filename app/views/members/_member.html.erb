@@ -1,0 +1,9 @@
+<tr>
+  <% if member.present? %>
+    <td><%= member.name %></td>
+    <td><%= member.tasks&.count %></td>
+    <td><%= link_to '(View tasks)', member_path(member) %></td>
+  <% else %>
+    <td>No member found!</td>
+  <% end %>
+</tr>
