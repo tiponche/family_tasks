@@ -23,7 +23,7 @@ class MembersController < ApplicationController
     @member = Member.find_by(id: params[:id])
     breadcrumbs.add "#{@member.name} tasks"
 
-    @tasks = @member.tasks.paginate(per_page: 2, page: params[:page])
+    @tasks = @member.tasks.paginate(per_page: 5, page: params[:page])
   end
 
   private

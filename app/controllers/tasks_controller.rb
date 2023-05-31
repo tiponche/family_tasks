@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   def index
     breadcrumbs.add "Tasks"
 
-    @tasks = Task.all.paginate(per_page: 2, page: params[:page])
+    @tasks = Task.all.paginate(per_page: 5, page: params[:page])
   end
 
   def new

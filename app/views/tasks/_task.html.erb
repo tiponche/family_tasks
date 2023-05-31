@@ -4,6 +4,8 @@
     <td>
       <% if task.is_completed? %>
         <span class="badge text-bg-success"><%= task.status %></span>
+      <% elsif task.is_incompleted? %>
+        <span class="badge text-bg-warning"><%= task.status %></span>
       <% else %>
         <span class="badge text-bg-danger"><%= task.status %></span>
       <% end %>

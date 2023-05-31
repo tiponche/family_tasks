@@ -5,9 +5,15 @@ class Task < ApplicationRecord
     DELAYED = 'DELAYED'.freeze
   end
 
+  scope :incompleted, -> { where(status: Status::INCOMPLETE) }
+
   belongs_to :member
 
   def is_completed?
     status == Status::COMPLETE
+  end
+
+  def is_incompleted?
+    status == Status::INCOMPLETE
   end
 end
