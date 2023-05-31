@@ -1,0 +1,3 @@
+mark_delayed_task:
+  cron: "0 0 * * *"
+  class: "MarkDelayedTaskWorker"

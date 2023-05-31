@@ -16,6 +16,7 @@ gem "redis", "~> 4.0"
 gem "breadcrumbs"
 gem "will_paginate", "~> 3.3"
 gem "active_model_serializers"
+gem "sidekiq-cron"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
